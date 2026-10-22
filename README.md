@@ -76,7 +76,7 @@ npm run dev          # or: bun run dev
 
 | Variable | Description |
 |----------|-------------|
-| `VITE_API_UPSTREAM` | Backend **origin** the server proxy forwards to (no trailing slash), e.g. `http://localhost:8000` |
+| `VITE_API_UPSTREAM` | Backend API base the server proxy forwards to — **must include `/api/v1`**, e.g. `http://localhost:8000/api/v1` |
 
 See [`.env.example`](.env.example). **Never commit `.env`.**
 Anything prefixed `VITE_` is bundled into the client — never put a secret there.
@@ -98,8 +98,10 @@ src/
 
 ## 🚢 Deployment
 
-Optimised for **Vercel** (zero-config). Set `VITE_API_UPSTREAM` in the Vercel
-project env. The server proxy keeps the backend origin private.
+Optimised for **Vercel** (zero-config, via the Nitro `vercel` preset). Full
+step-by-step guide + gotchas: **[DEPLOYMENT.md](DEPLOYMENT.md)**. Set
+`VITE_API_UPSTREAM` in the Vercel project env; the server proxy keeps the
+backend origin private.
 
 ---
 
