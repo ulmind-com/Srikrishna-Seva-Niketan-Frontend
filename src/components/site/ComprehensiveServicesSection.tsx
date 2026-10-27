@@ -26,7 +26,7 @@ const SERVICES: ServiceCard[] = [
   {
     id: "infection",
     title: "I​nfection Control Nurse Services",
-    image: "/assets/service_img_8_desktop.jpg",
+    image: "/assets/service_img_8_desktop.webp",
     features: [
       "Infection Prevention & Control",
       "Hand Hygiene & PPE Practices",
@@ -42,7 +42,7 @@ const SERVICES: ServiceCard[] = [
   {
     id: "nursing",
     title: "Home Nursing Care",
-    image: "/assets/services/nursing-care.png",
+    image: "/assets/services/nursing-care.webp",
     features: [
       "Skilled Nursing Care at Home",
       "Injection & IV Drip Services",
@@ -71,7 +71,7 @@ const SERVICES: ServiceCard[] = [
   {
     id: "elderly",
     title: "Elderly Care",
-    image: "/assets/services/elderly-care.png",
+    image: "/assets/services/elderly-care.webp",
     features: [
       "8, 12 & 24 Hour Elderly Care",
       "Personal Hygiene & Sponging",
@@ -94,7 +94,7 @@ const SERVICES: ServiceCard[] = [
   {
     id: "mother-baby",
     title: "Mother & Baby Care",
-    image: "/assets/services/mother-baby-care.png",
+    image: "/assets/services/mother-baby-care.webp",
     features: [
       "New Mother Care",
       "Baby Care & Assistance",
@@ -118,7 +118,7 @@ const SERVICES: ServiceCard[] = [
   {
     id: "physio",
     title: "Physiotherapy & Recovery",
-    image: "/assets/services/physiotherapy.png",
+    image: "/assets/services/physiotherapy.webp",
     features: [
       "Physiotherapy at Home",
       "Post-Surgery Rehabilitation",
@@ -145,7 +145,7 @@ const SERVICES: ServiceCard[] = [
   {
     id: "equipment",
     title: "Medical Equipment Rental",
-    image: "/assets/services/equipment-rental.png",
+    image: "/assets/services/equipment-rental.webp",
     features: [
       "Hospital Beds",
       "Wheelchairs",
@@ -170,7 +170,7 @@ const SERVICES: ServiceCard[] = [
   {
     id: "icu",
     title: "ICU Setup at Home",
-    image: "/assets/services/icu-setup.png",
+    image: "/assets/services/icu-setup.webp",
     features: [
       "Home ICU Setup",
       "ICU Bed & Essential Equipment",
@@ -196,7 +196,7 @@ const SERVICES: ServiceCard[] = [
   {
     id: "sample",
     title: "Home Sample Collection",
-    image: "/assets/services/home-sample.png",
+    image: "/assets/services/home-sample.webp",
     features: [
       "Blood Sample Collection",
       "Urine Sample Collection",

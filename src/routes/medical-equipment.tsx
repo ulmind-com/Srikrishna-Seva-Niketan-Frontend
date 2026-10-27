@@ -242,16 +242,16 @@ function EquipmentHero({ phone, category }: { phone?: string; category?: any }) 
       }))
     : [
         {
-          desktop: heroImageStr || "/assets/equipment-hero-21-9-1.png",
-          mobile: "/assets/mobile/equipment-hero-9-16-1.png",
+          desktop: heroImageStr || "/assets/equipment-hero-21-9-1.webp",
+          mobile: "/assets/mobile/equipment-hero-9-16-1.webp",
         },
         {
-          desktop: "/assets/equipment-hero-21-9-2.png",
-          mobile: "/assets/mobile/equipment-hero-9-16-2.png",
+          desktop: "/assets/equipment-hero-21-9-2.webp",
+          mobile: "/assets/mobile/equipment-hero-9-16-2.webp",
         },
         {
-          desktop: "/assets/equipment-hero-21-9-3.png",
-          mobile: "/assets/mobile/equipment-hero-9-16-3.png",
+          desktop: "/assets/equipment-hero-21-9-3.webp",
+          mobile: "/assets/mobile/equipment-hero-9-16-3.webp",
         },
       ];
 

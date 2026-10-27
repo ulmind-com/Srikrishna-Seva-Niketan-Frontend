@@ -283,17 +283,17 @@ function MotherBabyHero({
   const images = category?.hero_images?.length
     ? category.hero_images.map((img: any) => typeof img === "string" ? img : img.url)
     : [
-        "/assets/hero-desktop/mother_baby_desktop_1_1787204531372.jpg",
-        "/assets/hero-desktop/mother_baby_desktop_2_1787204543889.jpg",
-        "/assets/hero-desktop/mother_baby_desktop_3_1787204554373.jpg",
+        "/assets/hero-desktop/mother_baby_desktop_1_1787204531372.webp",
+        "/assets/hero-desktop/mother_baby_desktop_2_1787204543889.webp",
+        "/assets/hero-desktop/mother_baby_desktop_3_1787204554373.webp",
       ];
 
   const mobileImages = category?.hero_images_mobile?.length
     ? category.hero_images_mobile.map((img: any) => typeof img === "string" ? img : img.url)
     : [
-        "/assets/hero-mobile/mother_baby_mobile_1_1787204578046.jpg",
-        "/assets/hero-mobile/mother_baby_mobile_2_1787204592769.jpg",
-        "/assets/hero-mobile/mother_baby_mobile_3_1787204605595.jpg",
+        "/assets/hero-mobile/mother_baby_mobile_1_1787204578046.webp",
+        "/assets/hero-mobile/mother_baby_mobile_2_1787204592769.webp",
+        "/assets/hero-mobile/mother_baby_mobile_3_1787204605595.webp",
       ];
 
   const [currentIdx, setCurrentIdx] = useState(0);

@@ -18,7 +18,7 @@ export const DUMMY_BLOGS: Blog[] = [
     slug: "when-should-families-choose-caregiver-services",
     excerpt:
       "Caring for a loved one is one of the most emotional duties in any family. Learn when it's time to seek professional help to ensure they receive the best possible care without burning out.",
-    featured_image: "/assets/services/nurse-elder.jpg",
+    featured_image: "/assets/services/nurse-elder.webp",
     category_name: "Home Care",
     created_at: new Date().toISOString(),
     status: "published",
@@ -29,7 +29,7 @@ export const DUMMY_BLOGS: Blog[] = [
     slug: "how-home-icu-supports-post-surgery-recovery",
     excerpt:
       "Recovering after surgery is not always easy. Even after a successful operation, home ICU setups can provide better comfort, constant monitoring, and reduce the risk of hospital-acquired infections.",
-    featured_image: "/assets/services/nurse-companion.jpg",
+    featured_image: "/assets/services/nurse-companion.webp",
     category_name: "Medical",
     created_at: new Date(Date.now() - 86400000).toISOString(),
     status: "published",
@@ -40,7 +40,7 @@ export const DUMMY_BLOGS: Blog[] = [
     slug: "why-more-families-are-choosing-home-health-care",
     excerpt:
       "Simple habits to improve your physical and mental energy through natural wellness practices at home. Discover why moving away from traditional nursing homes is the new standard.",
-    featured_image: "/assets/hero-care.jpg",
+    featured_image: "/assets/hero-care.webp",
     category_name: "Nursing",
     created_at: new Date(Date.now() - 172800000).toISOString(),
     status: "published",
@@ -51,7 +51,7 @@ export const DUMMY_BLOGS: Blog[] = [
     slug: "things-to-check-before-hiring-physiotherapist",
     excerpt:
       "Physiotherapy is crucial for recovery. Here are the key things you must verify before hiring a professional, from certifications to understanding their approach to personalized care.",
-    featured_image: "/assets/services/physio.jpg",
+    featured_image: "/assets/services/physio.webp",
     category_name: "Home Care",
     created_at: new Date(Date.now() - 259200000).toISOString(),
     status: "published",
@@ -146,7 +146,7 @@ function BlogsPage() {
         {/* Right Image (Absolute positioning exactly like About page) */}
         <div className="relative h-[250px] md:h-[400px] w-full lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-[45%] xl:w-[50%] -z-10">
           <img
-            src="/assets/hero-doctors-team.png"
+            src="/assets/hero-doctors-team.webp"
             alt="Our Blogs"
             className="w-full h-full object-cover object-top"
           />
@@ -196,7 +196,7 @@ function BlogCard({ blog }: { blog: Blog }) {
   const imageUrl =
     typeof blog.featured_image === "string"
       ? blog.featured_image
-      : blog.featured_image?.url || "/assets/hero-care.jpg";
+      : blog.featured_image?.url || "/assets/hero-care.webp";
 
   const date = blog.published_at || blog.created_at;
   const formattedDate = date

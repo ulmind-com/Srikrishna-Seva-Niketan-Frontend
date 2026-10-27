@@ -398,17 +398,17 @@ function NursingHero({
   const images = category?.hero_images?.length 
     ? category.hero_images.map((img: any) => typeof img === "string" ? img : img.url)
     : [
-        heroImageStr || "/assets/nurse-hero-21-9-1.png",
-        "/assets/nurse-hero-21-9-2.png",
-        "/assets/nurse-hero-21-9-3.png",
+        heroImageStr || "/assets/nurse-hero-21-9-1.webp",
+        "/assets/nurse-hero-21-9-2.webp",
+        "/assets/nurse-hero-21-9-3.webp",
       ];
 
   const mobileImages = category?.hero_images_mobile?.length
     ? category.hero_images_mobile.map((img: any) => typeof img === "string" ? img : img.url)
     : [
-        "/assets/Home%20Nourse/mobile-1.png",
-        "/assets/Home%20Nourse/mobile-2.png",
-        "/assets/Home%20Nourse/mobile-3.png",
+        "/assets/Home%20Nourse/mobile-1.webp",
+        "/assets/Home%20Nourse/mobile-2.webp",
+        "/assets/Home%20Nourse/mobile-3.webp",
       ];
   
   const [currentIdx, setCurrentIdx] = useState(0);

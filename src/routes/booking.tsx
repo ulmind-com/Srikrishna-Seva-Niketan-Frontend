@@ -75,7 +75,7 @@ function BookingPage() {
           {/* Left Image */}
           <div className="relative h-[450px] w-full lg:col-span-5 xl:col-span-5 lg:h-[550px] rounded-[32px] overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] z-10 border border-black/5 transform transition-transform duration-700 hover:scale-[1.02]">
             <img
-              src="/assets/hero-nurse-patient.png"
+              src="/assets/hero-nurse-patient.webp"
               alt="Doctor and Patient"
               className="w-full h-full object-cover object-top"
             />

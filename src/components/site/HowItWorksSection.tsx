@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ShieldCheck, Sparkles } from "lucide-react";
 import { settingsQ } from "@/lib/api/queries";
 import { HowItWorksBadge } from "./HowItWorksBadge";
-const communityCare = { url: "/assets/community-care.jpeg" };
+const communityCare = { url: "/assets/community-care.webp" };
 
 const VARIANTS = ["primary", "accent", "glow"] as const;
 

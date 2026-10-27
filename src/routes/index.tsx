@@ -251,7 +251,7 @@ const DEFAULT_BLOGS: any /* eslint-disable-line @typescript-eslint/no-explicit-a
       "Essential guidelines for home adaptations, fall prevention, and vitals monitoring to create a safe post-hospitalization healing sanctuary.",
     author_name: "Dr. A. Sengupta",
     read_time: "4",
-    featured_image: "/assets/hero-slide-2.jpeg",
+    featured_image: "/assets/hero-slide-2.webp",
     published_at: "2026-07-28T10:00:00Z",
   },
   {
@@ -263,7 +263,7 @@ const DEFAULT_BLOGS: any /* eslint-disable-line @typescript-eslint/no-explicit-a
       "What to expect during orthopedic or stroke rehabilitation, and why familiarity of home accelerates cognitive and physical recovery.",
     author_name: "S. Roy, PT",
     read_time: "5",
-    featured_image: "/assets/hero-slide-1.jpeg",
+    featured_image: "/assets/hero-slide-1.webp",
     published_at: "2026-07-22T10:00:00Z",
   },
   {
@@ -275,7 +275,7 @@ const DEFAULT_BLOGS: any /* eslint-disable-line @typescript-eslint/no-explicit-a
       "A step-by-step assessment guide for families evaluating round-the-clock ventilator, tracheostomy, or palliative nursing care.",
     author_name: "Nurse Lead Team",
     read_time: "3",
-    featured_image: "/assets/hero-slide-3.jpeg",
+    featured_image: "/assets/hero-slide-3.webp",
     published_at: "2026-07-15T10:00:00Z",
   },
 ];
@@ -411,7 +411,7 @@ function FaqSection() {
         {/* Left Side: Illustration */}
         <div className="flex items-center justify-center lg:justify-end pr-0 lg:pr-8">
           <img
-            src="/assets/faq-illustration.jpeg"
+            src="/assets/faq-illustration.webp"
             alt="Telemedicine Consultation"
             className="w-[85%] md:w-[70%] lg:w-[85%] max-w-md h-auto mix-blend-multiply"
           />

@@ -123,7 +123,7 @@ export function Footer() {
                 Designed and Developed by
               </span>
               <img
-                src="/assets/ulmind.png"
+                src="/assets/ulmind.webp"
                 alt="Ulmind"
                 className="h-10 w-auto object-contain transition-all group-hover:scale-105 sm:h-12"
               />

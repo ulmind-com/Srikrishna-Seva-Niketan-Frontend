@@ -8,13 +8,13 @@ import { useCallback, useEffect } from "react";
 import type { Category } from "@/lib/api/types";
 import { categoriesQ } from "@/lib/api/queries";
 import { CategoryCardShape } from "./CategoryCardShape";
-const nursingAsset = { url: "/assets/categories/nursing-v2.jpg?v=2" };
-const elderAsset = { url: "/assets/categories/elder.jpg?v=2" };
-const motherBabyAsset = { url: "/assets/categories/mother-baby.png" };
-const physioAsset = { url: "/assets/categories/physio-v2.jpg?v=2" };
-const equipmentAsset = { url: "/assets/categories/equipment-v2.jpg?v=2" };
-const icuSetupAsset = { url: "/assets/categories/icu-setup.png" };
-const homeSampleAsset = { url: "/assets/categories/home-sample.png" };
+const nursingAsset = { url: "/assets/categories/nursing-v2.webp?v=2" };
+const elderAsset = { url: "/assets/categories/elder.webp?v=2" };
+const motherBabyAsset = { url: "/assets/categories/mother-baby.webp" };
+const physioAsset = { url: "/assets/categories/physio-v2.webp?v=2" };
+const equipmentAsset = { url: "/assets/categories/equipment-v2.webp?v=2" };
+const icuSetupAsset = { url: "/assets/categories/icu-setup.webp" };
+const homeSampleAsset = { url: "/assets/categories/home-sample.webp" };
 
 type Variant = "a" | "b" | "c" | "d";
 
@@ -22,7 +22,7 @@ const fallbacks: Array<{ title: string; description: string; image: string; vari
   {
     title: "I​nfection Control Nurse Services",
     description: "Professional infection prevention & control support, training and guidance for healthcare settings.",
-    image: "/assets/service_img_8_desktop.jpg",
+    image: "/assets/service_img_8_desktop.webp",
     variant: "d",
     dedicatedLink: "/infection-control-nurse",
   },

@@ -25,7 +25,7 @@ function ContactPage() {
       <div id="hero-section" className="absolute top-0 left-0 right-0 h-[60vh] min-h-[500px] z-0">
         <div className="absolute inset-0 bg-dark" /> {/* Dark Theme Base */}
         <img
-          src="/assets/hero-slide-1.jpeg"
+          src="/assets/hero-slide-1.webp"
           alt="Contact Hero"
           className="w-full h-full object-cover mix-blend-overlay opacity-30"
         />

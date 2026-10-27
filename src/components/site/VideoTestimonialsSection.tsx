@@ -9,7 +9,7 @@ import { VideoPlayerModal } from "@/components/site/VideoPlayerModal";
 import type { Video } from "@/lib/api/types";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-const DEFAULT_WALL = "/assets/testimonials-wall.jpg";
+const DEFAULT_WALL = "/assets/testimonials-wall.webp";
 
 export function VideoTestimonialsSection() {
   const { data: settings } = useQuery(settingsQ());

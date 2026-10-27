@@ -81,7 +81,7 @@ function CareersPage() {
       <section className="relative pt-32 pb-32 lg:pt-40 lg:pb-40 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/assets/careers_hero_bg.jpg')" }} 
+          style={{ backgroundImage: "url('/assets/careers_hero_bg.webp')" }} 
         />
         <div className="absolute inset-0 bg-black/60" />
         <div className="container-x max-w-4xl text-center relative z-10">

@@ -27,15 +27,15 @@ import { Section } from "@/components/site/Section";
 import { api } from "@/lib/api/client";
 
 const HERO_IMAGES = [
-  "/assets/elderly-hero/1.png",
-  "/assets/elderly-hero/2.png",
-  "/assets/elderly-hero/3.png",
+  "/assets/elderly-hero/1.webp",
+  "/assets/elderly-hero/2.webp",
+  "/assets/elderly-hero/3.webp",
 ];
 
 const MOBILE_HERO_IMAGES = [
-  "/assets/elderly-hero-mobile/1.png",
-  "/assets/elderly-hero-mobile/2.png",
-  "/assets/elderly-hero-mobile/3.png",
+  "/assets/elderly-hero-mobile/1.webp",
+  "/assets/elderly-hero-mobile/2.webp",
+  "/assets/elderly-hero-mobile/3.webp",
 ];
 
 export const Route = createFileRoute("/elderly-care")({
@@ -66,25 +66,25 @@ export const Route = createFileRoute("/elderly-care")({
 
 const SERVICES = [
   {
-    image: "/assets/services/elderly_care.png",
+    image: "/assets/services/elderly_care.webp",
     title: "Elderly Care",
     description:
       "Compassionate home care and companionship for seniors who need assistance with their daily routine, personal care and comfort.",
   },
   {
-    image: "/assets/services/bedridden_care.png",
+    image: "/assets/services/bedridden_care.webp",
     title: "Bedridden Patient Care",
     description:
       "Support for bedridden seniors with personal hygiene, feeding, position changes, mobility assistance and daily supervision.",
   },
   {
-    image: "/assets/services/mobility_care.png",
+    image: "/assets/services/mobility_care.webp",
     title: "Mobility Assistance",
     description:
       "Our attendants assist elderly people with walking, transfers, movement and safe mobility at home to help reduce the risk of falls.",
   },
   {
-    image: "/assets/services/daily_living.png",
+    image: "/assets/services/daily_living.webp",
     title: "Daily Living Support",
     description:
       "Assistance with bathing, grooming, hygiene, meals, feeding and other everyday activities that become difficult for elderly people.",
@@ -615,7 +615,7 @@ function TrustedFeatures() {
           >
             <div className="aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 relative shadow-2xl">
               <img 
-                src="/assets/services/nurse-elder.jpg" 
+                src="/assets/services/nurse-elder.webp" 
                 alt="Elderly Care" 
                 className="w-full h-full object-cover"
               />

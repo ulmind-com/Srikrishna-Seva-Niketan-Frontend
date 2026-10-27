@@ -248,15 +248,15 @@ function IcuSetupPage() {
 
 function IcuHero({ phone, whatsapp }: { phone?: string; whatsapp?: string }) {
   const images = [
-    "/assets/hero-desktop/icu_desktop_1_1787204981037.jpg",
-    "/assets/hero-desktop/icu_desktop_2_1787204991157.jpg",
-    "/assets/hero-desktop/icu_desktop_3_1787205006319.jpg",
+    "/assets/hero-desktop/icu_desktop_1_1787204981037.webp",
+    "/assets/hero-desktop/icu_desktop_2_1787204991157.webp",
+    "/assets/hero-desktop/icu_desktop_3_1787205006319.webp",
   ];
 
   const mobileImages = [
-    "/assets/hero-mobile/icu_mobile_1_1787205029486.jpg",
-    "/assets/hero-mobile/icu_mobile_2_1787205041595.jpg",
-    "/assets/hero-mobile/icu_mobile_3_1787205063978.jpg",
+    "/assets/hero-mobile/icu_mobile_1_1787205029486.webp",
+    "/assets/hero-mobile/icu_mobile_2_1787205041595.webp",
+    "/assets/hero-mobile/icu_mobile_3_1787205063978.webp",
   ];
 
   const heroStats = [

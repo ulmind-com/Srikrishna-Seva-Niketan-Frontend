@@ -77,7 +77,7 @@ export function CommitmentSection() {
 
   // Dynamic image from admin panel, fallback to default
   const rawImg = settings?.commitment_image;
-  const teamImage = imgUrl(rawImg) || "/assets/commitment-team.png";
+  const teamImage = imgUrl(rawImg) || "/assets/commitment-team.webp";
 
   // Parse title to highlight the brand name
   const titleParts = sectionTitle.split(/(Nupun)/i);

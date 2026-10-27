@@ -50,7 +50,7 @@ function BlogDetailsPage() {
   const imageUrl =
     typeof blog.featured_image === "string"
       ? blog.featured_image
-      : blog.featured_image?.url || "/assets/hero-care.jpg";
+      : blog.featured_image?.url || "/assets/hero-care.webp";
 
   const date = blog.published_at || blog.created_at;
   const formattedDate = date

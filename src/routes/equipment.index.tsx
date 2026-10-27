@@ -48,35 +48,35 @@ const PERKS = [
 
 const EQUIPMENT_ITEMS = [
   {
-    src: "/assets/equipment/ultrasound.jpeg",
+    src: "/assets/equipment/ultrasound.webp",
     title: "Siemens X700 Ultrasound",
     category: "Diagnostic",
     price: "₹15,000",
     desc: "Advanced cardiovascular and OB/GYN imaging system with high-res display.",
   },
   {
-    src: "/assets/equipment/monitoring-1.jpeg",
+    src: "/assets/equipment/monitoring-1.webp",
     title: "At-Home Health Monitoring",
     category: "Monitoring",
     price: "₹2,500",
     desc: "Complete kit for blood pressure, glucose, and pulse oximetry tracking.",
   },
   {
-    src: "/assets/equipment/anesthesiology.jpeg",
+    src: "/assets/equipment/anesthesiology.webp",
     title: "Anesthesiology Equipment",
     category: "Life Support",
     price: "Contact us",
     desc: "Hospital-grade anesthesia workstation for specialized home care setups.",
   },
   {
-    src: "/assets/equipment/monitoring-2.jpeg",
+    src: "/assets/equipment/monitoring-2.webp",
     title: "Vitals Testing Kit",
     category: "Monitoring",
     price: "₹1,200",
     desc: "Portable multi-parameter patient monitor for continuous vitals tracking.",
   },
   {
-    src: "/assets/equipment/stethoscope.jpeg",
+    src: "/assets/equipment/stethoscope.webp",
     title: "Clinical Stethoscope",
     category: "Diagnostic",
     price: "₹500",
@@ -167,7 +167,7 @@ function EquipmentIndex() {
         {/* Right Image */}
         <div className="relative h-[350px] w-full lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-[45%] xl:w-[50%] -z-10 overflow-hidden">
           <img
-            src="/assets/equip.jpeg"
+            src="/assets/equip.webp"
             alt="Medical Equipment"
             className="w-full h-full object-cover object-[center_30%] transform hover:scale-105 transition-transform duration-[2s]"
           />

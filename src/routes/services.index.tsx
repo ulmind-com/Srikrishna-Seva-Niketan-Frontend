@@ -463,7 +463,7 @@ function ServicesIndex() {
             {/* Left Side: Illustration */}
             <div className="flex items-center justify-center lg:justify-end pr-0 lg:pr-8">
               <img
-                src="/assets/faq-illustration.jpeg"
+                src="/assets/faq-illustration.webp"
                 alt="Telemedicine Consultation"
                 className="w-[85%] md:w-[70%] lg:w-[85%] max-w-md h-auto mix-blend-multiply"
               />

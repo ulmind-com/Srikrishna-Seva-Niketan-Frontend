@@ -251,8 +251,8 @@ function SampleCollectionHero({
     { val: "Trained", label: "Professionals" },
   ];
 
-  const images = ["/assets/sample-collection/web.jpg"];
-  const mobileImages = ["/assets/sample-collection/mobile.jpg"];
+  const images = ["/assets/sample-collection/web.webp"];
+  const mobileImages = ["/assets/sample-collection/mobile.webp"];
   
   const [currentIdx, setCurrentIdx] = useState(0);
 

@@ -5,10 +5,10 @@ import { useQuery } from "@tanstack/react-query";
 import { servicesQ } from "@/lib/api/queries";
 import type { Service } from "@/lib/api/types";
 const FALLBACK_IMAGES = [
-  "/assets/services/nurse-elder.jpg",
-  "/assets/services/nurse-companion.jpg",
-  "/assets/services/physio.jpg",
-  "/assets/services/mobility.jpg",
+  "/assets/services/nurse-elder.webp",
+  "/assets/services/nurse-companion.webp",
+  "/assets/services/physio.webp",
+  "/assets/services/mobility.webp",
 ];
 
 export function ServicesMarquee() {

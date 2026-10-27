@@ -22,64 +22,64 @@ const FALLBACK_SLIDES: HeroSlide[] = [
     subtitle: "Compassionate and reliable home healthcare with professional nurses available 24/7.",
     button_text: "Book a Nurse",
     button_link: "/services/home-nursing-care",
-    image_desktop: { url: "/assets/hero-desktop/hero_desktop_1_nursing_1786737139820.jpg" },
-    image_mobile: { url: "/assets/hero-mobile/hero_mobile_1_nursing_1786737195851.jpg" },
+    image_desktop: { url: "/assets/hero-desktop/hero_desktop_1_nursing_1786737139820.webp" },
+    image_mobile: { url: "/assets/hero-mobile/hero_mobile_1_nursing_1786737195851.webp" },
   },
   {
     title: "Compassionate Elderly Care",
     subtitle: "Dedicated caregivers providing dignified, patient-centred elder care in the comfort of home.",
     button_text: "Book an Attendant",
     button_link: "/services/elderly-care",
-    image_desktop: { url: "/assets/hero-desktop/hero_desktop_2_elderly_1786737273511.jpg" },
-    image_mobile: { url: "/assets/hero-mobile/hero_mobile_2_elderly_1786737290173.jpg" },
+    image_desktop: { url: "/assets/hero-desktop/hero_desktop_2_elderly_1786737273511.webp" },
+    image_mobile: { url: "/assets/hero-mobile/hero_mobile_2_elderly_1786737290173.webp" },
   },
   {
     title: "Mother & Baby Care",
     subtitle: "Specialized postnatal care to ensure the health and comfort of both mother and newborn.",
     button_text: "Book Newborn Care",
     button_link: "/services/mother-and-baby-care",
-    image_desktop: { url: "/assets/hero-desktop/hero_desktop_3_mother_baby_1786737385210.jpg" },
-    image_mobile: { url: "/assets/hero-mobile/hero_mobile_3_mother_baby_1786737410186.jpg" },
+    image_desktop: { url: "/assets/hero-desktop/hero_desktop_3_mother_baby_1786737385210.webp" },
+    image_mobile: { url: "/assets/hero-mobile/hero_mobile_3_mother_baby_1786737410186.webp" },
   },
   {
     title: "Physiotherapy & Recovery",
     subtitle: "Medically supervised recovery care and physiotherapy delivered at home for faster healing.",
     button_text: "Book a Physiotherapist",
     button_link: "/services/physiotherapy-and-recovery",
-    image_desktop: { url: "/assets/hero-desktop/hero_desktop_4_physio_1786737419510.jpg" },
-    image_mobile: { url: "/assets/hero-mobile/hero_mobile_4_physio_1786737469387.jpg" },
+    image_desktop: { url: "/assets/hero-desktop/hero_desktop_4_physio_1786737419510.webp" },
+    image_mobile: { url: "/assets/hero-mobile/hero_mobile_4_physio_1786737469387.webp" },
   },
   {
     title: "Medical Equipment Rental",
     subtitle: "High-quality, sanitized medical equipment like hospital beds and oxygen concentrators delivered to your home.",
     button_text: "Rent Equipment Now",
     button_link: "/equipment",
-    image_desktop: { url: "/assets/hero-desktop/hero_desktop_5_equipment_1786737493628.jpg" },
-    image_mobile: { url: "/assets/hero-mobile/hero_mobile_5_equipment_1786737520362.jpg" },
+    image_desktop: { url: "/assets/hero-desktop/hero_desktop_5_equipment_1786737493628.webp" },
+    image_mobile: { url: "/assets/hero-mobile/hero_mobile_5_equipment_1786737520362.webp" },
   },
   {
     title: "Professional ICU Setup",
     subtitle: "Complete ICU-level care and equipment setup at home for critically ill patients.",
     button_text: "Request ICU Setup",
     button_link: "/contact",
-    image_desktop: { url: "/assets/hero-desktop/hero_desktop_6_icu_1786737546853.jpg" },
-    image_mobile: { url: "/assets/hero-mobile/hero_mobile_6_icu_1786737784974.jpg" },
+    image_desktop: { url: "/assets/hero-desktop/hero_desktop_6_icu_1786737546853.webp" },
+    image_mobile: { url: "/assets/hero-mobile/hero_mobile_6_icu_1786737784974.webp" },
   },
   {
     title: "Home Sample Collection",
     subtitle: "Safe and hygienic diagnostic sample collection right from your doorstep by professional phlebotomists.",
     button_text: "Book Home Lab Test",
     button_link: "/sample-collection",
-    image_desktop: { url: "/assets/sample-collection/web.jpg" },
-    image_mobile: { url: "/assets/sample-collection/mobile.jpg" },
+    image_desktop: { url: "/assets/sample-collection/web.webp" },
+    image_mobile: { url: "/assets/sample-collection/mobile.webp" },
   },
   {
     title: "I​nfection Control Nurse Services",
     subtitle: "Professional infection prevention & control support, training and guidance for healthcare settings.",
     button_text: "Enquire Now",
     button_link: "/infection-control-nurse",
-    image_desktop: { url: "/assets/service_img_8_desktop.jpg" },
-    image_mobile: { url: "/assets/service_img_8_desktop.jpg" },
+    image_desktop: { url: "/assets/service_img_8_desktop.webp" },
+    image_mobile: { url: "/assets/service_img_8_desktop.webp" },
   }
 ];
 
@@ -194,7 +194,7 @@ export function ServicesHeroSlider({ slides: dynamicSlides }: { slides?: HeroSli
   }, [current, go, isModalOpen]);
 
   const slide = slides[current];
-  const desktopUrl = slide.image_desktop?.url || "/assets/hero-slide-1.jpeg";
+  const desktopUrl = slide.image_desktop?.url || "/assets/hero-slide-1.webp";
   const mobileUrl = slide.image_mobile?.url || desktopUrl;
 
   return (

@@ -52,7 +52,7 @@ const DEFAULT_FEATURES: FeatureItem[] = [
   },
 ];const DEFAULT_TILES: TileItem[] = [
   {
-    image: "/assets/service_img_8_desktop.jpg",
+    image: "/assets/service_img_8_desktop.webp",
     count: "24/7",
     title: "I​nfection Control Nurse Services",
     description: "Infection prevention & control support and training",
@@ -60,7 +60,7 @@ const DEFAULT_FEATURES: FeatureItem[] = [
     cta_link: "/infection-control-nurse",
   },
   {
-    image: "/assets/categories/nursing-v2.jpg?v=2",
+    image: "/assets/categories/nursing-v2.webp?v=2",
     count: "200+",
     title: "Home Nursing Care",
     description: "Round-the-clock bedside medical care",
@@ -68,7 +68,7 @@ const DEFAULT_FEATURES: FeatureItem[] = [
     cta_link: "/booking",
   },
   {
-    image: "/assets/categories/elder.jpg?v=2",
+    image: "/assets/categories/elder.webp?v=2",
     count: "150+",
     title: "Elderly Care",
     description: "Daily living support & elderly companionship",
@@ -76,7 +76,7 @@ const DEFAULT_FEATURES: FeatureItem[] = [
     cta_link: "/booking",
   },
   {
-    image: "/assets/categories/mother-baby.png",
+    image: "/assets/categories/mother-baby.webp",
     count: "50+",
     title: "Mother & Baby Care",
     description: "Post-delivery care for mother & newborn",
@@ -84,7 +84,7 @@ const DEFAULT_FEATURES: FeatureItem[] = [
     cta_link: "/booking",
   },
   {
-    image: "/assets/categories/physio-v2.jpg?v=2",
+    image: "/assets/categories/physio-v2.webp?v=2",
     count: "45+",
     title: "Physiotherapy & Recovery",
     description: "In-home rehab & pain recovery",
@@ -92,7 +92,7 @@ const DEFAULT_FEATURES: FeatureItem[] = [
     cta_link: "/booking",
   },
   {
-    image: "/assets/categories/equipment-v2.jpg?v=2",
+    image: "/assets/categories/equipment-v2.webp?v=2",
     count: "100+",
     title: "Medical Equipment",
     description: "Rental medical equipment at home",
@@ -100,7 +100,7 @@ const DEFAULT_FEATURES: FeatureItem[] = [
     cta_link: "/medical-equipment",
   },
   {
-    image: "/assets/categories/icu-setup.png",
+    image: "/assets/categories/icu-setup.webp",
     count: "30+",
     title: "ICU Setup",
     description: "Hospital-grade ICU setup delivered",
@@ -108,7 +108,7 @@ const DEFAULT_FEATURES: FeatureItem[] = [
     cta_link: "/booking",
   },
   {
-    image: "/assets/categories/home-sample.png",
+    image: "/assets/categories/home-sample.webp",
     count: "500+",
     title: "Home Sample Collection",
     description: "Lab tests from the comfort of home",
@@ -161,7 +161,7 @@ function FeatureIcon({ icon, iconImage, className = "" }: { icon: string; iconIm
     case "icu":
       return (
         <img
-          src="/assets/icu-icon.png"
+          src="/assets/icu-icon.webp"
           alt="ICU at Home"
           className={className.replace("h-6 w-6", "h-9 w-9 md:h-10 md:w-10") + " object-contain mix-blend-multiply scale-110"}
         />

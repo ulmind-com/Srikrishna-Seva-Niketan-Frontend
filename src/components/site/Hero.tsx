@@ -16,11 +16,11 @@ import { Counter } from "@/components/site/ui/Counter";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const HERO_IMAGES = [
-  "/assets/premium-hero-new-1.png",
-  "/assets/premium-hero-new-2.png",
-  "/assets/premium-hero-new-3.png",
-  "/assets/premium-hero-new-4.png",
-  "/assets/premium-hero-new-5.png",
+  "/assets/premium-hero-new-1.webp",
+  "/assets/premium-hero-new-2.webp",
+  "/assets/premium-hero-new-3.webp",
+  "/assets/premium-hero-new-4.webp",
+  "/assets/premium-hero-new-5.webp",
 ];
 
 const SLIDE_DURATION = 6000;
@@ -163,6 +163,9 @@ export function Hero() {
           <img
             src={bg}
             alt="Premium Home Health Care"
+            fetchPriority={current === 0 ? "high" : "auto"}
+            loading="eager"
+            decoding="async"
             className={`h-full w-full object-cover ${
               current === 0
                 ? "object-center md:object-[50%_40%] lg:object-[50%_45%]"

@@ -3,27 +3,27 @@ import { PerspectiveCarousel } from "@/components/ui/perspective-carousel";
 
 const ITEMS = [
   {
-    src: "/assets/equipment/ultrasound.jpeg",
+    src: "/assets/equipment/ultrasound.webp",
     title: "Siemens X700 Ultrasound",
     alt: "Siemens X700 ultrasound system",
   },
   {
-    src: "/assets/equipment/monitoring-1.jpeg",
+    src: "/assets/equipment/monitoring-1.webp",
     title: "At-Home Health Monitoring",
     alt: "Home BP, glucose and pulse oximeter kit",
   },
   {
-    src: "/assets/equipment/anesthesiology.jpeg",
+    src: "/assets/equipment/anesthesiology.webp",
     title: "Anesthesiology Equipment",
     alt: "Hospital anesthesiology station",
   },
   {
-    src: "/assets/equipment/monitoring-2.jpeg",
+    src: "/assets/equipment/monitoring-2.webp",
     title: "Vitals Testing Kit",
     alt: "Home vitals and testing kit",
   },
   {
-    src: "/assets/equipment/stethoscope.jpeg",
+    src: "/assets/equipment/stethoscope.webp",
     title: "Clinical Stethoscope",
     alt: "Professional clinical stethoscope",
   },
