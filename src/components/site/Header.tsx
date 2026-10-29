@@ -73,32 +73,12 @@ export function Header() {
               onDarkHero ? "from-white/15" : "from-white/60",
             )}
           />
-          <Link to="/" className="relative flex items-center gap-3 shrink-0">
-            <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-xl overflow-hidden bg-white/95 p-1 shadow-sm border border-black/5 grid place-items-center">
-              <img
-                src={typeof settings?.logo === 'string' ? settings.logo : (settings?.logo as any)?.url || "/logo.webp"}
-                alt={(!settings?.website_name || settings.website_name.toLowerCase().includes("nupun")) ? "Srikrishna Seva Niketan" : settings.website_name}
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <div className="leading-tight flex flex-col justify-center whitespace-nowrap">
-              <div
-                className={cn(
-                  "font-display text-[16px] sm:text-[18px] font-bold tracking-tight uppercase",
-                  onDarkHero && "text-white",
-                )}
-              >
-                {((!settings?.website_name || settings.website_name.toLowerCase().includes("nupun")) ? "Srikrishna Seva Niketan" : settings.website_name).split(" ")[0]}
-              </div>
-              <div
-                className={cn(
-                  "text-[9.5px] sm:text-[10.5px] font-semibold uppercase tracking-[0.22em] -mt-0.5",
-                  onDarkHero ? "text-white/80" : "text-muted-foreground",
-                )}
-              >
-                {((!settings?.website_name || settings.website_name.toLowerCase().includes("nupun")) ? "Srikrishna Seva Niketan" : settings.website_name).split(" ").slice(1).join(" ")}
-              </div>
-            </div>
+          <Link to="/" className="relative flex items-center shrink-0 transition-transform duration-200 hover:scale-105">
+            <img
+              src="/logo.png"
+              alt={(!settings?.website_name || settings.website_name.toLowerCase().includes("nupun")) ? "Srikrishna Seva Niketan" : settings.website_name}
+              className="h-12 sm:h-14 lg:h-[56px] w-auto object-contain filter drop-shadow-sm"
+            />
           </Link>
 
           <nav className="relative hidden lg:flex items-center gap-8">
