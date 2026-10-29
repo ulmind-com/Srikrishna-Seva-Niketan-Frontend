@@ -28,6 +28,7 @@ const schema = z.object({
   city: z.string().min(1, "Please select a city"),
   preferred_date: z.string().min(1, "Pick a date"),
   preferred_time: emptyToUndef(z.string().optional()),
+  payment_type: z.enum(["prepaid", "postpaid"]).default("prepaid"),
 
   // Step 3 — Patient
   patient_name: z.string().trim().min(2, "Enter patient name").max(120),
@@ -53,7 +54,7 @@ export type { City };
 
 const STEPS = [
   { key: "service", label: "Training", fields: ["service_name"] as const },
-  { key: "schedule", label: "Location & Schedule", fields: ["city", "preferred_date", "preferred_time"] as const },
+  { key: "schedule", label: "Location & Schedule", fields: ["city", "preferred_date", "preferred_time", "payment_type"] as const },
   {
     key: "patient",
     label: "Patient Details",
@@ -119,6 +120,7 @@ export function BookingForm({
       city: presetCity ?? "",
       preferred_date: "",
       preferred_time: "",
+      payment_type: "prepaid",
       patient_name: "",
       care_required: "",
       message: "",
@@ -365,6 +367,12 @@ function ScheduleStep({ form }: { form: UseFormReturn<Values> }) {
           <input type="time" {...form.register("preferred_time")} className={inputCls} />
         </FloatField>
       </div>
+      <FloatField label="Payment Preference (পেমেন্ট মোড)" error={form.formState.errors.payment_type?.message}>
+        <select {...form.register("payment_type")} className={inputCls}>
+          <option value="prepaid">Prepaid (Pay Advance Online / Office)</option>
+          <option value="postpaid">Postpaid (Pay Cash in Hand to Staff after Service)</option>
+        </select>
+      </FloatField>
       <div className="rounded-2xl border border-border bg-primary-soft/40 p-4 text-sm text-muted-foreground flex items-start gap-3">
         <Sparkles className="h-4 w-4 mt-0.5 text-accent shrink-0" />
         <span>

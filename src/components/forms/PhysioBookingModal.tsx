@@ -25,6 +25,7 @@ const physioFormSchema = z.object({
   contact_phone: z.string().min(7, "Enter a valid phone number"),
   city: z.string().min(1, "Select a city"),
   service_name: z.string().min(1, "Select a service"),
+  payment_type: z.enum(["prepaid", "postpaid"]).default("prepaid"),
   patient_condition: z.string().optional(),
 });
 
@@ -81,6 +82,7 @@ export function PhysioBookingModal({
       contact_phone: "",
       city: "",
       service_name: defaultService,
+      payment_type: "prepaid",
       patient_condition: "",
     },
   });
@@ -303,6 +305,33 @@ export function PhysioBookingModal({
                         {form.formState.errors.service_name.message}
                       </p>
                     )}
+                  </div>
+
+                  {/* Payment Type */}
+                  <div>
+                    <div className="relative">
+                      <select
+                        {...form.register("payment_type")}
+                        className="w-full rounded-full border border-border bg-transparent px-5 py-3.5 pr-10 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15 text-foreground appearance-none cursor-pointer"
+                      >
+                        <option value="prepaid">Prepaid (Pay Advance to Office / Online)</option>
+                        <option value="postpaid">Postpaid (Pay Cash In-Hand after Service)</option>
+                      </select>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </div>
                   </div>
 
                   {/* Patient Condition */}

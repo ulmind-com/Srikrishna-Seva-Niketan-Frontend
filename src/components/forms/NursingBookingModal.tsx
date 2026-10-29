@@ -37,6 +37,7 @@ const nursingFormSchema = z.object({
   city: z.string().min(1, "Select a city"),
   duty_hours: z.string().min(1, "Select duty hours"),
   service_name: z.string().min(1, "Select a service"),
+  payment_type: z.enum(["prepaid", "postpaid"]).default("prepaid"),
   patient_condition: z.string().optional(),
 });
 
@@ -108,6 +109,7 @@ export function NursingBookingModal({
       city: "",
       duty_hours: "",
       service_name: defaultService,
+      payment_type: "prepaid",
       patient_condition: "",
     },
   });
@@ -332,6 +334,20 @@ export function NursingBookingModal({
                         {form.formState.errors.service_name.message}
                       </p>
                     )}
+                  </div>
+
+                  {/* Payment Mode */}
+                  <div>
+                    <div className="relative">
+                      <select
+                        {...form.register("payment_type")}
+                        className="w-full rounded-full border border-border bg-transparent px-5 py-3.5 pr-10 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15 text-foreground appearance-none cursor-pointer"
+                      >
+                        <option value="prepaid">Prepaid (Pay Advance Online / Office)</option>
+                        <option value="postpaid">Postpaid (Pay Cash to Staff after Duty)</option>
+                      </select>
+                      <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                    </div>
                   </div>
 
                   {/* Patient Condition */}
