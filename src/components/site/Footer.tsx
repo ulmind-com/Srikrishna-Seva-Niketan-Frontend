@@ -47,7 +47,10 @@ export function Footer() {
   const { data: social } = useQuery(socialQ());
   const { data: categoriesData } = useQuery(categoriesQ({ limit: 12 }));
 
-  const name = settings?.website_name ?? "Srikrishna Seva Niketan";
+  const rawName = settings?.website_name;
+  const name = (!rawName || rawName.toLowerCase().includes("nupun"))
+    ? "Srikrishna Seva Niketan"
+    : rawName;
   const categories = categoriesData?.items || [];
   
   const SERVICES_LINKS = categories.length > 0 
@@ -69,17 +72,15 @@ export function Footer() {
         <div className="container-x relative z-10 flex flex-col justify-between flex-grow pb-16 md:pb-8">
           
           <div className="flex flex-col items-center md:items-start text-center md:text-left mb-10">
-             <div className="flex flex-row items-center justify-center md:justify-start gap-3 mb-5 md:mb-6 text-left">
-              {settings?.logo ? (
-                <div className="bg-white rounded-lg p-1">
-                  <img src={typeof settings.logo === 'string' ? settings.logo : (settings.logo as any)?.url} alt={name} className="h-10 w-10 object-contain shrink-0" />
-                </div>
-              ) : (
-                <div className="bg-white rounded-lg p-1">
-                  <img src="/logo.webp" alt={name} className="h-10 w-10 object-contain shrink-0" />
-                </div>
-              )}
-              <div className="font-display text-xl sm:text-2xl tracking-tight text-white font-medium leading-tight">{name}</div>
+             <div className="flex flex-row items-center justify-center md:justify-start gap-3.5 mb-5 md:mb-6 text-left">
+              <div className="bg-white rounded-xl p-1 shadow-md shrink-0">
+                <img
+                  src={typeof settings?.logo === 'string' ? settings.logo : (settings?.logo as any)?.url || "/logo.webp"}
+                  alt={name}
+                  className="h-12 w-12 sm:h-14 sm:w-14 object-contain"
+                />
+              </div>
+              <div className="font-display text-2xl sm:text-3xl tracking-tight text-white font-bold leading-tight">{name}</div>
              </div>
              
              <p className="text-[14px] text-white max-w-lg mb-6 leading-relaxed">

@@ -73,28 +73,30 @@ export function Header() {
               onDarkHero ? "from-white/15" : "from-white/60",
             )}
           />
-          <Link to="/" className="relative flex items-center gap-2.5 shrink-0">
-            {settings?.logo ? (
-              <img src={typeof settings.logo === 'string' ? settings.logo : (settings.logo as any)?.url} alt={settings.website_name || "Srikrishna Seva Niketan"} className="h-9 w-9 object-contain" />
-            ) : (
-              <img src="/logo.webp" alt="Srikrishna Seva Niketan" className="h-9 w-9 object-contain rounded-xl" />
-            )}
+          <Link to="/" className="relative flex items-center gap-3 shrink-0">
+            <div className="relative h-11 w-11 sm:h-12 sm:w-12 rounded-xl overflow-hidden bg-white/95 p-1 shadow-sm border border-black/5 grid place-items-center">
+              <img
+                src={typeof settings?.logo === 'string' ? settings.logo : (settings?.logo as any)?.url || "/logo.webp"}
+                alt={(!settings?.website_name || settings.website_name.toLowerCase().includes("nupun")) ? "Srikrishna Seva Niketan" : settings.website_name}
+                className="h-full w-full object-contain"
+              />
+            </div>
             <div className="leading-tight flex flex-col justify-center whitespace-nowrap">
               <div
                 className={cn(
-                  "font-display text-[15px] font-semibold tracking-tight uppercase",
+                  "font-display text-[16px] sm:text-[18px] font-bold tracking-tight uppercase",
                   onDarkHero && "text-white",
                 )}
               >
-                {settings?.website_name?.split(" ")[0] || "Srikrishna"}
+                {((!settings?.website_name || settings.website_name.toLowerCase().includes("nupun")) ? "Srikrishna Seva Niketan" : settings.website_name).split(" ")[0]}
               </div>
               <div
                 className={cn(
-                  "text-[9px] uppercase tracking-[0.22em] -mt-0.5",
-                  onDarkHero ? "text-white/70" : "text-muted-foreground",
+                  "text-[9.5px] sm:text-[10.5px] font-semibold uppercase tracking-[0.22em] -mt-0.5",
+                  onDarkHero ? "text-white/80" : "text-muted-foreground",
                 )}
               >
-                {settings?.website_name?.split(" ").slice(1).join(" ") || "Seva Niketan"}
+                {((!settings?.website_name || settings.website_name.toLowerCase().includes("nupun")) ? "Srikrishna Seva Niketan" : settings.website_name).split(" ").slice(1).join(" ")}
               </div>
             </div>
           </Link>

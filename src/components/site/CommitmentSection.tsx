@@ -60,10 +60,14 @@ export function CommitmentSection() {
 
   // Section header — dynamic with fallback
   const eyebrow = settings?.why_choose_eyebrow || "Our Promise";
-  const sectionTitle = settings?.why_choose_title || "Why Choose Srikrishna Seva Niketan?";
-  const sectionDescription =
-    settings?.why_choose_description ||
-    "We go beyond standard care to ensure your peace of mind and your loved one\u2019s well-being \u2014 every visit, every time.";
+  const rawTitle = settings?.why_choose_title;
+  const sectionTitle = (!rawTitle || rawTitle.toLowerCase().includes("nupun"))
+    ? "Why Choose Srikrishna Seva Niketan?"
+    : rawTitle;
+  const rawDesc = settings?.why_choose_description;
+  const sectionDescription = (!rawDesc || rawDesc.toLowerCase().includes("nupun"))
+    ? "We go beyond standard care to ensure your peace of mind and your loved one\u2019s well-being \u2014 every visit, every time."
+    : rawDesc;
   const commitmentSubtitle = settings?.commitment_subtitle || "Our Commitment to Excellence";
   const badgeValue = settings?.commitment_badge_value || "100%";
   const badgeLabel = settings?.commitment_badge_label || "Verified Staff";
