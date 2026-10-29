@@ -21,7 +21,7 @@ export const Route = createFileRoute("/equipment/$slug")({
   },
   head: ({ loaderData, params }) => ({
     meta: [
-      { title: `${loaderData?.title ?? "Equipment"} — Rent from Nupun` },
+      { title: `${loaderData?.title ?? "Equipment"} — Rent from Srikrishna Seva Niketan` },
       { name: "description", content: loaderData?.description ?? "Medical equipment for rent." },
       { property: "og:title", content: loaderData?.title ?? "Equipment" },
       { property: "og:description", content: loaderData?.description ?? "" },

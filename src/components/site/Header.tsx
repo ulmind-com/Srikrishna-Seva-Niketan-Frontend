@@ -75,20 +75,9 @@ export function Header() {
           />
           <Link to="/" className="relative flex items-center gap-2.5 shrink-0">
             {settings?.logo ? (
-              <img src={typeof settings.logo === 'string' ? settings.logo : (settings.logo as any)?.url} alt={settings.website_name || "Logo"} className="h-9 w-9 object-contain" />
+              <img src={typeof settings.logo === 'string' ? settings.logo : (settings.logo as any)?.url} alt={settings.website_name || "Srikrishna Seva Niketan"} className="h-9 w-9 object-contain" />
             ) : (
-              <div className="relative h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-accent grid place-items-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-5 w-5 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  aria-hidden
-                >
-                  <path d="M12 21s-7-4.35-9.5-8.5C.85 9.5 2.4 5.5 6 5c2.05-.28 3.7.9 6 3 2.3-2.1 3.95-3.28 6-3 3.6.5 5.15 4.5 3.5 7.5C19 16.65 12 21 12 21Z" />
-                </svg>
-              </div>
+              <img src="/logo.webp" alt="Srikrishna Seva Niketan" className="h-9 w-9 object-contain rounded-xl" />
             )}
             <div className="leading-tight flex flex-col justify-center whitespace-nowrap">
               <div
@@ -97,7 +86,7 @@ export function Header() {
                   onDarkHero && "text-white",
                 )}
               >
-                {settings?.website_name?.split(" ")[0] || "Nupun"}
+                {settings?.website_name?.split(" ")[0] || "Srikrishna"}
               </div>
               <div
                 className={cn(
@@ -105,7 +94,7 @@ export function Header() {
                   onDarkHero ? "text-white/70" : "text-muted-foreground",
                 )}
               >
-                {settings?.website_name?.split(" ").slice(1).join(" ") || "Home Health Care"}
+                {settings?.website_name?.split(" ").slice(1).join(" ") || "Seva Niketan"}
               </div>
             </div>
           </Link>

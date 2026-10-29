@@ -8,8 +8,8 @@ import { LegalPage } from "@/components/site/LegalPage";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms & Conditions — Nupun Home Health Care" },
-      { name: "description", content: "Terms governing use of Nupun's services and website." },
+      { title: "Terms & Conditions — Srikrishna Seva Niketan" },
+      { name: "description", content: "Terms governing use of Srikrishna Seva Niketan services and website." },
       { property: "og:url", content: "/terms" },
     ],
     links: [{ rel: "canonical", href: "/terms" }],
@@ -27,7 +27,7 @@ function Page() {
     },
     {
       title: "Services",
-      body: "Nupun coordinates home nursing, physiotherapy, elder care and equipment rentals. Availability, pricing and clinical suitability are confirmed at the time of booking.",
+      body: "Srikrishna Seva Niketan coordinates home nursing, physiotherapy, elder care and equipment rentals. Availability, pricing and clinical suitability are confirmed at the time of booking.",
     },
     {
       title: "Payments",
@@ -43,7 +43,7 @@ function Page() {
     },
     {
       title: "Liability",
-      body: "To the maximum extent permitted by law, Nupun's liability is limited to the fees paid for the specific service in question.",
+      body: "To the maximum extent permitted by law, Srikrishna Seva Niketan's liability is limited to the fees paid for the specific service in question.",
     },
     {
       title: "Changes",

@@ -47,7 +47,7 @@ export function Footer() {
   const { data: social } = useQuery(socialQ());
   const { data: categoriesData } = useQuery(categoriesQ({ limit: 12 }));
 
-  const name = settings?.website_name ?? "Nupun Home Health Care";
+  const name = settings?.website_name ?? "Srikrishna Seva Niketan";
   const categories = categoriesData?.items || [];
   
   const SERVICES_LINKS = categories.length > 0 
@@ -75,15 +75,8 @@ export function Footer() {
                   <img src={typeof settings.logo === 'string' ? settings.logo : (settings.logo as any)?.url} alt={name} className="h-10 w-10 object-contain shrink-0" />
                 </div>
               ) : (
-                <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent grid place-items-center shadow-lg shadow-primary/20 shrink-0">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-5 w-5 text-white"
-                    fill="currentColor"
-                    aria-hidden
-                  >
-                    <path d="M12 21s-7-4.35-9.5-8.5C.85 9.5 2.4 5.5 6 5c2.05-.28 3.7.9 6 3 2.3-2.1 3.95-3.28 6-3 3.6.5 5.15 4.5 3.5 7.5C19 16.65 12 21 12 21Z" />
-                  </svg>
+                <div className="bg-white rounded-lg p-1">
+                  <img src="/logo.webp" alt={name} className="h-10 w-10 object-contain shrink-0" />
                 </div>
               )}
               <div className="font-display text-xl sm:text-2xl tracking-tight text-white font-medium leading-tight">{name}</div>

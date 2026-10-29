@@ -21,8 +21,8 @@ export function BlogCard({ blog }: { blog: Blog }) {
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
-          <div className="grid h-full w-full place-items-center text-primary/70 font-display text-4xl">
-            Nupun
+          <div className="grid h-full w-full place-items-center text-primary/70 font-display text-2xl text-center px-4">
+            Srikrishna Seva Niketan
           </div>
         )}
       </div>

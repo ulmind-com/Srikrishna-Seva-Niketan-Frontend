@@ -11,9 +11,9 @@ import { EmptyState, Section } from "@/components/site/Section";
 export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
-      { title: "Blog — Nupun Home Health Care" },
+      { title: "Blog — Srikrishna Seva Niketan" },
       { name: "description", content: "Notes on caregiving, recovery and living well at home." },
-      { property: "og:title", content: "Blog — Nupun Home Health Care" },
+      { property: "og:title", content: "Blog — Srikrishna Seva Niketan" },
       { property: "og:description", content: "Notes on caregiving and recovery." },
       { property: "og:url", content: "/blog" },
     ],
@@ -98,8 +98,8 @@ function BlogIndex() {
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                   ) : (
-                    <div className="grid h-full w-full place-items-center font-display text-5xl text-primary/60">
-                      Nupun
+                    <div className="grid h-full w-full place-items-center font-display text-3xl text-primary/60 text-center px-4">
+                      Srikrishna Seva Niketan
                     </div>
                   )}
                 </div>

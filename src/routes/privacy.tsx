@@ -8,8 +8,8 @@ import { LegalPage } from "@/components/site/LegalPage";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Nupun Home Health Care" },
-      { name: "description", content: "How Nupun collects, uses and protects your information." },
+      { title: "Privacy Policy — Srikrishna Seva Niketan" },
+      { name: "description", content: "How Srikrishna Seva Niketan collects, uses and protects your information." },
       { property: "og:url", content: "/privacy" },
     ],
     links: [{ rel: "canonical", href: "/privacy" }],
@@ -51,7 +51,7 @@ function Page() {
       <PageHero
         eyebrow="Legal"
         title="Privacy policy"
-        description="How Nupun collects, uses and protects your information."
+        description="How Srikrishna Seva Niketan collects, uses and protects your information."
         crumbs={[{ label: "Home", to: "/" }, { label: "Privacy" }]}
       />
       <Section className="pt-4">
