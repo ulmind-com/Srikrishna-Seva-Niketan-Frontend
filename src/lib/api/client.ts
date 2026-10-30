@@ -38,6 +38,8 @@ type FetchOpts = {
   query?: Record<string, string | number | boolean | undefined | null>;
 };
 
+export const DIRECT_BACKEND = "https://srikrishna-seva-niketan-backend-y3fe.onrender.com/api/v1";
+
 export async function apiFetch<T>(path: string, opts: FetchOpts = {}): Promise<T> {
   const base = typeof window !== "undefined" ? window.location.origin : "http://localhost";
   const url = new URL(`${API_BASE}${path}`, base);
@@ -60,7 +62,28 @@ export async function apiFetch<T>(path: string, opts: FetchOpts = {}): Promise<T
     init.body = JSON.stringify(opts.body);
   }
 
-  const res = await fetch(url.toString(), init);
+  let res: Response;
+  try {
+    res = await fetch(url.toString(), init);
+  } catch (_proxyErr) {
+    // If the proxy fails (e.g. serverless cold start or network glitch),
+    // transparently fallback to direct backend request.
+    const directUrl = new URL(`${DIRECT_BACKEND}${path}`);
+    if (opts.query) {
+      for (const [k, v] of Object.entries(opts.query)) {
+        if (v !== undefined && v !== null && v !== "") directUrl.searchParams.set(k, String(v));
+      }
+    }
+    try {
+      res = await fetch(directUrl.toString(), init);
+    } catch (_directErr) {
+      throw new ApiError(
+        "Could not connect to service. Please check your connection and try again.",
+        0
+      );
+    }
+  }
+
   const text = await res.text();
   let json: unknown = null;
   try {
