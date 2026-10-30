@@ -262,7 +262,7 @@ function IcuHero({ phone, whatsapp }: { phone?: string; whatsapp?: string }) {
   const heroStats = [
     { val: "24/7", label: "ICU Support" },
     { val: "Complete", label: "Home Setup" },
-    { val: "4 Cities", label: "NCR Coverage" },
+    { val: "4 Cities", label: "Kolkata Coverage" },
   ];
 
   const [currentIdx, setCurrentIdx] = useState(0);

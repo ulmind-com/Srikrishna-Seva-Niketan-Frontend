@@ -386,7 +386,7 @@ function NursingHero({
   const heroStats = category?.hero_stats?.length ? category.hero_stats : [
     { val: "40+", label: "Nurses" },
     { val: "24/7", label: "Availability" },
-    { val: "4 Cities", label: "NCR Coverage" },
+    { val: "4 Cities", label: "Kolkata Coverage" },
   ];
   
   const heroImageStr = category?.hero_image

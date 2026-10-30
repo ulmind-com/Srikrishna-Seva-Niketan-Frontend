@@ -71,9 +71,9 @@ function AboutPage() {
 
   // Address data
   const addressName = (settings as any)?.about_address_name || "Srikrishna Seva Niketan";
-  const addressLine1 = (settings as any)?.about_address_line1 || "5th Floor, Tower-C, Unitech Cyber Park";
-  const addressLine2 = (settings as any)?.about_address_line2 || "Sector-39, Gurgaon, India – 122003";
-  const mapEmbedUrl = (settings as any)?.about_map_embed_url || "https://maps.google.com/maps?q=Sector+62,+Faridabad,+Haryana+121004&t=&z=14&ie=UTF8&iwloc=&output=embed";
+  const addressLine1 = (settings as any)?.about_address_line1 || "Salt Lake Sector 5";
+  const addressLine2 = (settings as any)?.about_address_line2 || "Kolkata, West Bengal, India";
+  const mapEmbedUrl = (settings as any)?.about_map_embed_url || "https://maps.google.com/maps?q=Salt+Lake+Sector+5,+Kolkata,+West+Bengal&t=&z=14&ie=UTF8&iwloc=&output=embed";
 
   return (
     <>

@@ -63,7 +63,7 @@ function ContactPage() {
                 <InfoRow
                   icon={MapPin}
                   title="Head Office"
-                  desc={settings?.address || "Delhi NCR, India"}
+                  desc={settings?.address || "Kolkata, West Bengal, India"}
                 />
                 <InfoRow icon={Mail} title="Email Us" desc={settings?.email || "info@srikrishnasevaniketan.com"} />
                 <InfoRow icon={Phone} title="Call Us" desc={settings?.phone || "+91 98130 95627"} />

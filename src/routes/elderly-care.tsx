@@ -23,6 +23,7 @@ import {
 import { useState, useEffect } from "react";
 import { settingsQ, faqsQ, categoriesQ } from "@/lib/api/queries";
 import { ElderCareBookingModal } from "@/components/forms/ElderCareBookingModal";
+import { CITIES } from "@/components/forms/BookingForm";
 import { Section } from "@/components/site/Section";
 import { api } from "@/lib/api/client";
 
@@ -260,7 +261,7 @@ function ElderlyHero({ phone, whatsapp, category }: { phone?: string; whatsapp?:
   const heroStats = category?.hero_stats?.length ? category.hero_stats : [
     { val: "250+", label: "Caregivers" },
     { val: "24/7", label: "Availability" },
-    { val: "4 Cities", label: "NCR Coverage" },
+    { val: "4 Cities", label: "Kolkata Coverage" },
   ];
   
   const heroImageStr = category?.hero_image
@@ -908,10 +909,11 @@ function ElderlyInlineForm() {
                       className="w-full rounded-full border border-border bg-transparent px-5 py-3.5 pr-10 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15 text-foreground appearance-none"
                     >
                       <option value="">Select city</option>
-                      <option value="Faridabad">Faridabad</option>
-                      <option value="Delhi">Delhi</option>
-                      <option value="Noida">Noida</option>
-                      <option value="Gurugram">Gurugram</option>
+                      {CITIES.map((c) => (
+                        <option key={c} value={c}>
+                          {c}
+                        </option>
+                      ))}
                     </select>
                     <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
                   </div>

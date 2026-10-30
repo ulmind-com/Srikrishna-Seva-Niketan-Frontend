@@ -271,7 +271,7 @@ function MotherBabyHero({
   const heroStats = category?.hero_stats?.length ? category.hero_stats : [
     { val: "100+", label: "Caregivers" },
     { val: "24/7", label: "Availability" },
-    { val: "4 Cities", label: "NCR Coverage" },
+    { val: "4 Cities", label: "Kolkata Coverage" },
   ];
 
   const heroImageStr = category?.hero_image

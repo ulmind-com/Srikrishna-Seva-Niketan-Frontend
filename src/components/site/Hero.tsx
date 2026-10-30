@@ -91,7 +91,7 @@ export function Hero() {
   const heroSubtitle = settings?.hero_subtitle || "Har Pal Aapke Apno Ke Sath";
   const heroDescription =
     settings?.hero_description ||
-    "Trusted Home Nursing, Patient Attendant, Elderly Care, ICU Care, Physiotherapy, Medical Equipment Rental, Services at Home across Faridabad, Gurugram, Noida & Delhi.";
+    "Trusted Home Nursing, Patient Attendant, Elderly Care, ICU Care, Physiotherapy, Medical Equipment Rental, Services at Home across Salt Lake, Sector 5, New Town & Park Street.";
 
   const ctaPrimaryText = settings?.hero_cta_primary_text || "Book Trusted Care";
   const ctaSecondaryText = settings?.hero_cta_secondary_text || "WhatsApp Us";

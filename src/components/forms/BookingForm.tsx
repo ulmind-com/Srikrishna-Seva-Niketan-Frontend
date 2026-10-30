@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 const emptyToUndef = <T extends z.ZodTypeAny>(schema: T) =>
   z.preprocess((v) => (v === "" || v === null ? undefined : v), schema);
 
-const CITIES = ["Faridabad", "Gurugram", "Noida", "Delhi", "Other"] as const;
+const CITIES = ["Salt Lake", "Sector 5", "New Town", "Park Street", "Other"] as const;
 type City = (typeof CITIES)[number];
 
 const schema = z.object({

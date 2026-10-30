@@ -148,7 +148,7 @@ function CareersPage() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-foreground">Preferred Location</label>
-                    <input name="preferred_location" value={formData.preferred_location} onChange={handleChange} className="w-full h-12 px-4 rounded-xl border border-input bg-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="e.g. Gurgaon, Delhi" />
+                    <input name="preferred_location" value={formData.preferred_location} onChange={handleChange} className="w-full h-12 px-4 rounded-xl border border-input bg-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="e.g. Salt Lake, New Town" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-foreground">Qualification</label>

@@ -9,6 +9,7 @@ import {
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { api } from "@/lib/api/client";
 import { triggerBookingSuccess } from "@/components/site/GlobalBookingSuccess";
+import { CITIES } from "@/components/forms/BookingForm";
 
 const ELDER_SERVICES = [
   "Elderly care",
@@ -17,12 +18,7 @@ const ELDER_SERVICES = [
   "24 Hours attendant"
 ];
 
-const CITIES = [
-  "Faridabad",
-  "Delhi",
-  "Noida",
-  "Gurugram"
-];
+
 
 export function ElderCareBookingModal({ children, onOpenChange }: { children: React.ReactNode; onOpenChange?: (open: boolean) => void }) {
   const [isOpen, setIsOpen] = useState(false);
