@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 const UPSTREAM =
   import.meta.env.VITE_API_UPSTREAM ??
-  "https://srikrishna-seva-niketan-backend-y3fe.onrender.com/api/v1";
+  "https://srikrishna-seva-niketan-backend-99zi.onrender.com/api/v1";
 
 const CORS = {
   "Access-Control-Allow-Origin": "*",

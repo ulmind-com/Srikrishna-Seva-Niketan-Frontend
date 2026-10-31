@@ -38,7 +38,7 @@ type FetchOpts = {
   query?: Record<string, string | number | boolean | undefined | null>;
 };
 
-export const DIRECT_BACKEND = "https://srikrishna-seva-niketan-backend-y3fe.onrender.com/api/v1";
+export const DIRECT_BACKEND = "https://srikrishna-seva-niketan-backend-99zi.onrender.com/api/v1";
 
 export async function apiFetch<T>(path: string, opts: FetchOpts = {}): Promise<T> {
   const base = typeof window !== "undefined" ? window.location.origin : "http://localhost";
