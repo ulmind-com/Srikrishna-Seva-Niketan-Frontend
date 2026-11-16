@@ -153,6 +153,46 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+                    navigator.serviceWorker.getRegistrations().then(function(regs) {
+                      for (var i = 0; i < regs.length; i++) {
+                        regs[i].unregister();
+                      }
+                    });
+                  }
+                  if (typeof window !== 'undefined' && 'caches' in window) {
+                    caches.keys().then(function(keys) {
+                      for (var i = 0; i < keys.length; i++) {
+                        caches.delete(keys[i]);
+                      }
+                    });
+                  }
+                  if (typeof localStorage !== 'undefined') {
+                    for (var i = localStorage.length - 1; i >= 0; i--) {
+                      var k = localStorage.key(i);
+                      if (k && (k.toLowerCase().includes('nupun') || k.includes('lovable'))) {
+                        localStorage.removeItem(k);
+                      }
+                    }
+                  }
+                  if (typeof sessionStorage !== 'undefined') {
+                    for (var j = sessionStorage.length - 1; j >= 0; j--) {
+                      var sk = sessionStorage.key(j);
+                      if (sk && (sk.toLowerCase().includes('nupun') || sk.includes('lovable'))) {
+                        sessionStorage.removeItem(sk);
+                      }
+                    }
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
       </head>
       <body>
         {children}

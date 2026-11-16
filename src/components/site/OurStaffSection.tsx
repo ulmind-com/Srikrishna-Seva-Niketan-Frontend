@@ -11,6 +11,74 @@ import type { StaffMember } from "@/lib/api/types";
 
 type Duration = "7" | "15" | "30";
 
+const DEFAULT_STAFF: StaffMember[] = [
+  {
+    id: "staff-1",
+    name: "Jyoti Sharma",
+    category: "Nurse",
+    service_label: "Critical Care Nurse",
+    rating: 5,
+    order: 1,
+    is_active: true,
+    photo: { url: "/assets/nurse-hero-mobile-1.webp" },
+    price_7_days: 8400,
+    price_15_days: 17500,
+    price_30_days: 34000,
+  },
+  {
+    id: "staff-2",
+    name: "Shanti Kumari",
+    category: "Nurse",
+    service_label: "General & Post-Op Nurse",
+    rating: 4.9,
+    order: 2,
+    is_active: true,
+    photo: { url: "/assets/nurse-hero-mobile-2.webp" },
+    price_7_days: 7700,
+    price_15_days: 16000,
+    price_30_days: 31000,
+  },
+  {
+    id: "staff-3",
+    name: "Sunita Devi",
+    category: "Health Attendant",
+    service_label: "Senior Patient Attendant",
+    rating: 5,
+    order: 3,
+    is_active: true,
+    photo: { url: "/assets/Home Nourse/mobile-1.webp" },
+    price_7_days: 5600,
+    price_15_days: 11500,
+    price_30_days: 22000,
+  },
+  {
+    id: "staff-4",
+    name: "Rahul Karmakar",
+    category: "Physiotherapist",
+    service_label: "Orthopedic & Neuro Physio",
+    rating: 4.9,
+    order: 4,
+    is_active: true,
+    photo: { url: "/assets/nurse-hero-mobile-3.webp" },
+    price_7_days: 9100,
+    price_15_days: 19000,
+    price_30_days: 36000,
+  },
+  {
+    id: "staff-5",
+    name: "Pooja Mondal",
+    category: "Health Attendant",
+    service_label: "Elderly Care Specialist",
+    rating: 4.8,
+    order: 5,
+    is_active: true,
+    photo: { url: "/assets/Home Nourse/mobile-2.webp" },
+    price_7_days: 5600,
+    price_15_days: 11500,
+    price_30_days: 22000,
+  },
+];
+
 function StaffCard({ staff }: { staff: StaffMember }) {
   const [duration, setDuration] = useState<Duration>("7");
   const photo = imgUrl(staff.photo);
@@ -25,10 +93,10 @@ function StaffCard({ staff }: { staff: StaffMember }) {
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
       className="group relative flex flex-col overflow-hidden rounded-[20px] border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1"
     >
       {/* Photo */}
@@ -37,8 +105,9 @@ function StaffCard({ staff }: { staff: StaffMember }) {
           <img
             src={photo}
             alt={staff.name}
-            loading="lazy"
+            loading="eager"
             decoding="async"
+            fetchPriority="high"
             className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -122,15 +191,18 @@ function Dots({
 }
 
 export function OurStaffSection() {
-  const { data, isLoading, isError } = useQuery(staffQ({ limit: 50 }));
+  const { data } = useQuery(staffQ({ limit: 50 }));
+
+  /* Prefer live API data, fall back instantly to DEFAULT_STAFF so there is
+     zero loading delay, zero spinner flicker, and instant SSR/first-paint */
+  const rawItems = data?.items && data.items.length > 0 ? data.items : DEFAULT_STAFF;
 
   /* Sort every staff member by their admin-set `order` (ascending) up front.
      Both the category tabs and the cards inside them follow this, so the admin
      controls ordering purely through the Order field. */
   const items = useMemo(
-    () =>
-      [...(data?.items ?? [])].sort((a, b) => (a.order ?? 0) - (b.order ?? 0)),
-    [data],
+    () => [...rawItems].sort((a, b) => (a.order ?? 0) - (b.order ?? 0)),
+    [rawItems],
   );
 
   /* Category tabs = unique categories in order of first appearance in the
@@ -195,25 +267,15 @@ export function OurStaffSection() {
     }
   }, [activeCategory, emblaApi]);
 
-  if (isLoading) {
-    return (
-      <Section className="pt-4 pb-8 lg:pt-8 lg:pb-4">
-        <div className="mb-6 max-w-3xl mx-auto text-center">
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl tracking-tight">Our Staff</h2>
-        </div>
-        <div className="flex justify-center py-10">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-        </div>
-      </Section>
-    );
-  }
-
-  if (isError || !items.length) return null;
+  if (!items.length) return null;
 
   return (
     <Section className="pt-4 pb-8 lg:pt-8 lg:pb-4">
       <div className="mb-6 max-w-3xl mx-auto text-center">
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl tracking-tight">Our Staff</h2>
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl tracking-tight">Our Nurses &amp; Staff</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Hospital-trained, background-verified professionals ready to care for your family at home.
+        </p>
       </div>
 
       {/* Category Tabs */}

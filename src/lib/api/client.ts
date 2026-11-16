@@ -62,26 +62,37 @@ export async function apiFetch<T>(path: string, opts: FetchOpts = {}): Promise<T
     init.body = JSON.stringify(opts.body);
   }
 
-  let res: Response;
-  try {
-    res = await fetch(url.toString(), init);
-  } catch (_proxyErr) {
-    // If the proxy fails (e.g. serverless cold start or network glitch),
-    // transparently fallback to direct backend request.
+  let res: Response | null = null;
+  const doDirectFetch = async (): Promise<Response> => {
     const directUrl = new URL(`${DIRECT_BACKEND}${path}`);
     if (opts.query) {
       for (const [k, v] of Object.entries(opts.query)) {
         if (v !== undefined && v !== null && v !== "") directUrl.searchParams.set(k, String(v));
       }
     }
+    return await fetch(directUrl.toString(), init);
+  };
+
+  try {
+    // Attempt proxy first
+    res = await fetch(url.toString(), init);
+    // If proxy returns a server error (502/503/504 cold-start or busy), try direct
+    if (!res.ok && res.status >= 500) {
+      res = await doDirectFetch();
+    }
+  } catch (_proxyErr) {
     try {
-      res = await fetch(directUrl.toString(), init);
+      res = await doDirectFetch();
     } catch (_directErr) {
       throw new ApiError(
         "Could not connect to service. Please check your connection and try again.",
         0
       );
     }
+  }
+
+  if (!res) {
+    throw new ApiError("Failed to receive a response.", 0);
   }
 
   const text = await res.text();
