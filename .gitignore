@@ -53,3 +53,4 @@ dist-ssr
 secrets.json
 service-account*.json
 .claude/
+.env*
