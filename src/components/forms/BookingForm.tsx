@@ -106,6 +106,19 @@ export function BookingForm({
   const { data: categoriesData } = useQuery(categoriesQ({ limit: 20 }));
   const categories = categoriesData?.items ?? [];
 
+  const { data: publicBranches = [] } = useQuery({
+    queryKey: ["public-branches"],
+    queryFn: async () => {
+      try {
+        const res = await api.get<{ id: string; name: string; code: string; city?: string }[]>("/staff-portal/branches");
+        return Array.isArray(res) ? res : [];
+      } catch {
+        return [];
+      }
+    },
+    staleTime: 60_000,
+  });
+
   const serviceOptions =
     categories.length > 0
       ? categories.map((c) => ({ name: c.name || "", slug: c.slug || "" }))
@@ -238,7 +251,7 @@ export function BookingForm({
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
             {step === 0 && <ServiceStep form={form} services={serviceOptions} />}
-            {step === 1 && <ScheduleStep form={form} />}
+            {step === 1 && <ScheduleStep form={form} branches={publicBranches} />}
             {step === 2 && <PatientStep form={form} />}
             {step === 3 && <ContactStep form={form} />}
           </motion.div>
@@ -343,20 +356,34 @@ function ServiceStep({
 
 /* ─────────────── Step 2: Location & Schedule ─────────────── */
 
-function ScheduleStep({ form }: { form: UseFormReturn<Values> }) {
+function ScheduleStep({
+  form,
+  branches = [],
+}: {
+  form: UseFormReturn<Values>;
+  branches?: { id: string; name: string; city?: string }[];
+}) {
+  const cityOptions =
+    branches.length > 0
+      ? Array.from(new Set(branches.map((b) => b.city?.trim() || b.name.trim()).filter(Boolean)))
+      : ["Arambag", "Kolkata", "Other"];
+
   return (
     <div className="grid gap-6">
       <StepHeader
         eyebrow="Location & Schedule"
         title="Where and when do you need care?"
-        description="Pick your preferred city, date and time — final slot is confirmed on the call."
+        description="Pick your preferred city or service area, date and time — final slot is confirmed on the call."
       />
-      <FloatField label="Select City" error={form.formState.errors.city?.message}>
+      <FloatField label="Select City / Branch Area" error={form.formState.errors.city?.message}>
         <select {...form.register("city")} className={inputCls}>
-          <option value="">Select city</option>
-          {CITIES.map((c) => (
-            <option key={c} value={c}>{c}</option>
+          <option value="">Select city / branch area</option>
+          {cityOptions.map((c) => (
+            <option key={c} value={c}>
+              {c}
+            </option>
           ))}
+          {!cityOptions.includes("Other") && <option value="Other">Other / Home Delivery</option>}
         </select>
       </FloatField>
       <div className="grid gap-4 md:grid-cols-2">

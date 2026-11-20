@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
-import { Upload, CheckCircle2, Loader2, FileText, Check, ChevronDown } from "lucide-react";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { Upload, CheckCircle2, Loader2, FileText, Check, ChevronDown, Building2, Sparkles } from "lucide-react";
 import { api } from "@/lib/api/client";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
@@ -38,6 +38,19 @@ function CareersPage() {
   });
   
   const [resumeFile, setResumeFile] = useState<File | null>(null);
+
+  const { data: branchesData = [] } = useQuery({
+    queryKey: ["public-branches"],
+    queryFn: async () => {
+      try {
+        const res = await api.get<{ id: string; name: string; code: string; city?: string }[]>("/staff-portal/branches");
+        return Array.isArray(res) ? res : [];
+      } catch {
+        return [];
+      }
+    },
+    staleTime: 30_000,
+  });
 
   const { mutate, isPending, isSuccess } = useMutation({
     mutationFn: async (data: FormData) => {
@@ -147,8 +160,60 @@ function CareersPage() {
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground">Preferred Location</label>
-                    <input name="preferred_location" value={formData.preferred_location} onChange={handleChange} className="w-full h-12 px-4 rounded-xl border border-input bg-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="e.g. Salt Lake, New Town" />
+                    <div className="flex items-center justify-between">
+                      <label className="text-sm font-semibold text-foreground">Preferred Location / Branch</label>
+                      {branchesData.length > 0 && (
+                        <span className="text-xs text-muted-foreground">{branchesData.length} available</span>
+                      )}
+                    </div>
+                    <div className="relative">
+                      <input
+                        list="branch-options"
+                        name="preferred_location"
+                        value={formData.preferred_location}
+                        onChange={handleChange}
+                        className="w-full h-12 px-4 rounded-xl border border-input bg-transparent focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                        placeholder={
+                          branchesData.length > 0
+                            ? `e.g. ${branchesData.map((b) => b.name).join(", ")}`
+                            : "Enter preferred branch or city"
+                        }
+                      />
+                      <datalist id="branch-options">
+                        {branchesData.map((b) => (
+                          <option key={b.id} value={b.name}>
+                            {b.city ? `${b.name} (${b.city})` : b.name}
+                          </option>
+                        ))}
+                      </datalist>
+                    </div>
+                    {branchesData.length > 0 && (
+                      <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                        <span className="text-xs text-muted-foreground font-medium flex items-center gap-1">
+                          <Sparkles className="h-3 w-3 text-primary" /> Suggestions:
+                        </span>
+                        {branchesData.map((b) => {
+                          const isSelected = formData.preferred_location === b.name;
+                          return (
+                            <button
+                              key={b.id}
+                              type="button"
+                              onClick={() => setFormData((prev) => ({ ...prev, preferred_location: b.name }))}
+                              className={cn(
+                                "text-xs px-2.5 py-1 rounded-lg border transition-all inline-flex items-center gap-1 cursor-pointer",
+                                isSelected
+                                  ? "bg-primary text-white border-primary shadow-sm"
+                                  : "bg-muted/70 text-foreground border-border hover:bg-muted"
+                              )}
+                            >
+                              <Building2 className="h-3 w-3 opacity-70" />
+                              <span>{b.name}</span>
+                              {b.city && <span className="opacity-75 text-[10px]">({b.city})</span>}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-foreground">Qualification</label>
